@@ -16,7 +16,7 @@ import { Response } from 'express';
 
 //SERVICES
 import { ProjectService } from './project.service';
-import { addProjectDTO } from './dto/addProject.dto';
+import { AddProjectDTO } from './dto/addProject.dto';
 
 @ApiTags('Project')
 @Controller('project')
@@ -42,7 +42,7 @@ export class ProjectController {
   @Post()
   @ApiOkResponse({ description: 'Add Success' })
   @ApiUnauthorizedResponse({ description: 'Unauthorized' })
-  async addProject(@Body() payload: addProjectDTO, @Res() response: Response) {
+  async addProject(@Body() payload: AddProjectDTO, @Res() response: Response) {
     try {
       return response
         .status(HttpStatus.OK)

@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 
 //INTERFACES
 import { IProject } from './interfaces/project';
-import { addProjectDTO } from './dto/addProject.dto';
+import { AddProjectDTO } from './dto/addProject.dto';
 
 @Injectable()
 export class ProjectService {
@@ -19,7 +19,7 @@ export class ProjectService {
     }
   };
 
-  addProject = async (payload: addProjectDTO) => {
+  addProject = async (payload: AddProjectDTO) => {
     try {
       const createdUser = new this.projectModel(payload);
       return await createdUser.save();
